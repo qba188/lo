@@ -25,12 +25,12 @@ function makeArray2() {
 
 }
 
-var names = makeArray2();
+var names = [true, true, false, false, false, false, false, false, false, false];
 console.log(names);
 	
 	for (var j = 0; j < names.length; j++){
 
-		if(names[j] = "false")
+		if(names[j].value = "false")
 		{
 			console.log("if stat");
 		}
