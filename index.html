@@ -10,7 +10,7 @@
     <div class="container">
 
         <h1>Sortowanie tabeli po kolumnach</h1>
-       	<button onclick="checkList()">Click me</button>
+       	
         <table id="myTable">
             <thead>
                 <tr>
@@ -24,55 +24,60 @@
                 <tr>
                     <td>Jan</td>
                     <td>Kowalski</td>
-                    <td><input type="checkbox" checked></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Maria</td>
                     <td>Nowak</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Tomasz</td>
                     <td>Jabłoński</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Anna</td>
                     <td>Zielińska</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Adrian</td>
                     <td>Kowalewski</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Monika</td>
                     <td>Polak</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Jacek</td>
                     <td>Zmarzluch</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Jadwiga</td>
                     <td>Kowalczyk</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Patryk</td>
                     <td>Smukły</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
                 <tr>
                     <td>Katarzyna</td>
                     <td>Bilan</td>
-                    <td><input type="checkbox"></td>
+                    <td><input class="isIn" type="checkbox"></td>
                 </tr>
             </tbody>
         </table>
+        <button onclick="clear()">wyczysc</button>
+        <button onclick="arrayy()">tablica</button>
+        <button onclick="wyn()">wynik</button>
+        <p id="obecni"></p>
+        <p id="nieObecni"></p>
 
     </div>
 

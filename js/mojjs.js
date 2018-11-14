@@ -1,13 +1,8 @@
-var list = document.querySelectorAll('input[type=checkbox]');
+var list = document.querySelectorAll('input[type=checkbox]'),
+	isInScore = 0,
+	dIsInScore = 0,
+	names = makeArray2();
 
-
-//sprawdzenie wartosci pol input
-function isChecked (){
-	for (var i = 0; i < list.length; i++) {
-  		var listchecked = list[i].checked;
-		console.log(listchecked);
-	}	
-}
 
 
 //zwraca do tablicy wartosc pol input
@@ -24,21 +19,49 @@ function makeArray2() {
     return arr2;
 
 }
-
-var names = makeArray2();
-console.log(names);
+//spr warunków, wywołanie odpowiedniej funkcji
+function checkList(){
 	
 	for (var j = 0; j < names.length; j++){
 
-		if(!names[j])
-		{
-			console.log("if stat");
+		if(!names[j]){
+			
+			absentScore();
+			
 		}
-		else
-		{
-			console.log("else stat");
+		else{
+			
+			presentScore();
+			
 		}
 	}
+}
 
+//zwiększenie wartosci nieobecnych
+function absentScore(){
+	isInScore+=1;
+	document.getElementById("nieObecni").innerHTML="Nieobecni" + "" + ":" + isInScore;
+}
 
+//zwiększenie wartosci obecnych
+function presentScore(){
+	dIsInScore+=1;
+	document.getElementById("obecni").innerHTML="Obecni" + "" + ":" + dIsInScore;
+}
 
+function clear(){
+	
+	isInScore = 0;
+	dIsInScore = 0;
+		
+}
+function arrayy(){
+	
+	makeArray2();
+		
+}
+function wyn(){
+	
+	checkList();
+		
+}
