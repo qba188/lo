@@ -1,9 +1,6 @@
 var list = document.querySelectorAll('input[type=checkbox]'),
 	isInScore = 0,
 	dIsInScore = 0;
-	//names = makeArray2();
-
-
 
 //zwraca do tablicy wartosc pol input
 function makeArray2() {
@@ -19,6 +16,7 @@ function makeArray2() {
     return arr2;
 
 }
+
 //spr warunków, wywołanie odpowiedniej funkcji
 function checkList(){
 	
@@ -34,7 +32,7 @@ function checkList(){
 		else{
 			
 			presentScore();
-			
+			document.getElementById("nieObecni").innerHTML="Nieobecni" + "" + ":" + isInScore;
 		}
 	}
 }
@@ -66,3 +64,50 @@ function wyn(){
 	checkList();
 		
 }
+
+//nasluchuje klikniecia
+function load (){
+    var klikk = document.getElementsByClassName("isIn");
+    for (var i=0;i<klikk.length;i++){
+        klikk[i].addEventListener("click", wyn, false);
+    }
+}
+
+
+
+
+
+
+
+//dodawanie pol
+
+function insertBefore() {
+	
+	var cBox = document.createElement("input");
+	cBox.className="isIn";
+	cBox.type="checkbox";
+
+	var tdBox = document.createElement("td");
+	tdBox.innerHTML = "Inny element ";
+	var newNode2 = document.createElement("td"); //tworzymy nowy nod z tekstem
+    newNode2.innerText = "Inny element ";
+	var newNode3 = document.createElement("td");
+	newNode3.appendChild(cBox);
+	
+	
+    var td = document.querySelectorAll("addP");
+    var p = document.querySelector("#addP"); //pobieramy element <p>
+    var strong = td.firstElementChild;//pobieramy pierwsze dziecko p czyli element <strong>
+	
+    var newNode = document.createElement("tr"); //tworzymy nowy nod z tekstem
+    newNode.appendChild(tdBox);
+	newNode.appendChild(newNode2);
+	newNode.appendChild(newNode3);
+	
+
+    p.insertBefore(newNode, strong); //wstawiamy go przed <strong>
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("#add").addEventListener("click", insertBefore, load);
+});

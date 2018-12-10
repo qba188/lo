@@ -5,7 +5,7 @@
     <title>Przykład 72 - Praktyczny projekt: Sortowanie tabeli po kolumnach</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="load(); ">
 
     <div class="container">
 
@@ -20,7 +20,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody id="addP">
                 <tr>
                     <td>Jan</td>
                     <td>Kowalski</td>
@@ -73,11 +73,14 @@
                 </tr>
             </tbody>
         </table>
-        <button onclick="reset()">wyczysc</button>
-        <button onclick="arrayy()">tablica</button>
-        <button onclick="wyn()">wynik</button>
-        <p id="obecni"></p>
+        <input type="text" id="data">
+        <button id="add">Dodaj</button>
+        
+       <div>
+       	<p id="obecni"></p>
         <p id="nieObecni"></p>
+       </div>
+        
 
     </div>
 
