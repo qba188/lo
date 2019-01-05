@@ -1,4 +1,4 @@
-var list = document.querySelectorAll('input[type=checkbox]'),
+var list = document.getElementsByClassName("isIn"),
 	isInScore = 0,
 	dIsInScore = 0;
 
@@ -62,6 +62,7 @@ function wyn(){
 	makeArray2();
 	reset();
 	checkList();
+	
 		
 }
 
@@ -74,11 +75,6 @@ function load (){
 }
 
 
-
-
-
-
-
 //dodawanie pol
 
 function insertBefore() {
@@ -88,9 +84,9 @@ function insertBefore() {
 	cBox.type="checkbox";
 
 	var tdBox = document.createElement("td");
-	tdBox.innerHTML = "Inny element ";
+	tdBox.innerHTML = document.getElementById("dataName").value;
 	var newNode2 = document.createElement("td"); //tworzymy nowy nod z tekstem
-    newNode2.innerText = "Inny element ";
+    newNode2.innerText = document.getElementById("dataSname").value;;
 	var newNode3 = document.createElement("td");
 	newNode3.appendChild(cBox);
 	
@@ -105,9 +101,14 @@ function insertBefore() {
 	newNode.appendChild(newNode3);
 	
 
-    p.insertBefore(newNode, strong); //wstawiamy go przed <strong>
+	p.insertBefore(newNode, strong); //wstawiamy go przed <strong>
+	load();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector("#add").addEventListener("click", insertBefore, load);
+    document.querySelector("#add").addEventListener("click", insertBefore);
 });
+
+
+
+
